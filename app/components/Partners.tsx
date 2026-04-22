@@ -1,6 +1,6 @@
 const Partners = () => {
     const partners = [
-        'https://r2.erweima.ai/imgcompressed/img/compressed_c7b5b737d3fbc449d4f358de2d7d22f2.webp',
+        'https://down-id.img.susercontent.com/file/id-11134233-7r98w-lmpfz2imysng3c',
         'https://img.freepik.com/vektor-premium/logo-butik-dalam-gaya-minimalis-elegan_278222-3164.jpg',
         'https://marketplace.canva.com/EAFjIxZQqJM/1/0/1600w/canva-putih-hitam-simple-toko-pakaian-logo-Ac8Vt44Xj-Q.jpg',
         'https://id-test-11.slatic.net/shop/771b208c0c3b81bdcb6c1a4bbd52f857.png',

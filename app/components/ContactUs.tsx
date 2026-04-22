@@ -15,24 +15,46 @@ const ContactUs = () => {
             <div className={`container mx-auto px-6 flex flex-col lg:flex-row items-center transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <div className="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                        Siap Untuk Memesan?
+                        Siap Untuk Memesan ?
                     </h2>
                     <p className="text-lg text-gray-600 mb-8">
                         Isi formulir di samping untuk memulai pemesanan Anda. Tim kami akan segera menghubungi Anda melalui WhatsApp untuk konfirmasi dan diskusi lebih lanjut.
                     </p>
 
-                    <div className="space-y-4 mb-8">
-                        <div className="flex items-center space-x-4">
-                            <FaWhatsapp className="text-green-500 text-2xl" />
-                            <span className="text-gray-700">+62 813-1335-9686</span>
+                    <div className="grid grid-cols-1 gap-4 mb-8">
+                        {/* Card WhatsApp */}
+                        <div className="flex items-center space-x-4 bg-white/60 backdrop-blur-sm p-4 rounded-xl border border-white shadow-sm hover:shadow-md transition-all duration-300 hover:bg-white">
+                            <div className="bg-green-100 p-3 rounded-lg">
+                                <FaWhatsapp className="text-green-500 text-xl" />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">WhatsApp</span>
+                                <span className="text-gray-700 font-medium">+62 813-1335-9686</span>
+                            </div>
                         </div>
-                        <div className="flex items-center space-x-4">
-                            <FaEnvelope className="text-purple-600 text-2xl" />
-                            <span className="text-gray-700">info@rumahpenjahit.com</span>
+
+                        {/* Card Email */}
+                        <div className="flex items-center space-x-4 bg-white/60 backdrop-blur-sm p-4 rounded-xl border border-white shadow-sm hover:shadow-md transition-all duration-300 hover:bg-white">
+                            <div className="bg-purple-100 p-3 rounded-lg">
+                                <FaEnvelope className="text-purple-600 text-xl" />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Email</span>
+                                <span className="text-gray-700 font-medium">info@rumahpenjahit.com</span>
+                            </div>
                         </div>
-                        <div className="flex items-center space-x-4">
-                            <FaMapMarkerAlt className="text-red-500 text-2xl" />
-                            <span className="text-gray-700">Perum Rancamaya Blok B4, Sukasenang, Sindangkasih, Ciamis</span>
+
+                        {/* Card Alamat */}
+                        <div className="flex items-start space-x-4 bg-white/60 backdrop-blur-sm p-4 rounded-xl border border-white shadow-sm hover:shadow-md transition-all duration-300 hover:bg-white">
+                            <div className="bg-red-100 p-3 rounded-lg shrink-0">
+                                <FaMapMarkerAlt className="text-red-500 text-xl" />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Lokasi</span>
+                                <span className="text-gray-700 font-medium text-sm leading-relaxed">
+                                    Perum Rancamaya Blok B4, Sukasenang, Sindangkasih, Ciamis
+                                </span>
+                            </div>
                         </div>
                     </div>
 

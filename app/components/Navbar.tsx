@@ -28,50 +28,63 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
-            <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-                <a href="#hero" className="flex-shrink-0">
-                    {/* 1. UBAH KONTAINER MENJADI PERSEGI */}
-                    <div className="relative w-12 h-12 sm:w-16 sm:h-16">
+        <nav className="fixed inset-x-0 top-0 z-50 px-3 sm:px-6 pt-3">
+            <div className={`mx-auto flex max-w-7xl items-center justify-between rounded-2xl border px-4 sm:px-6 py-3 transition-all duration-500 ${isScrolled
+                    ? 'border-purple-200/80 bg-white/85 shadow-[0_12px_40px_-18px_rgba(124,58,237,0.55)] backdrop-blur-xl'
+                    : 'border-white/40 bg-white/70 backdrop-blur-md'
+                }`}>
+                <a href="#hero" className="flex items-center gap-3">
+                    <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden ring-2 ring-purple-100">
                         <Image
                             src="/images/logo-rba.jpg"
                             alt="Rumah Penjahit An Nur"
                             fill
-                            sizes="(max-width: 640px) 48px, 64px"
-                            className="object-contain rounded-full"
+                            sizes="(max-width: 640px) 44px, 48px"
+                            className="object-cover"
                             priority
                         />
                     </div>
+                    <div className="hidden sm:block">
+                        <p className="text-sm font-semibold text-purple-700">Rumah Busana Annur</p>
+                        <p className="text-xs text-gray-500">Jahit Rapi • Elegan • Nyaman</p>
+                    </div>
                 </a>
 
-                {/* Desktop Menu */}
-                <div className="hidden lg:flex space-x-6 xl:space-x-8 items-center">
+                <div className="hidden lg:flex items-center gap-6 xl:gap-7">
                     {navLinks.map((link) => (
-                        <a key={link.href} href={link.href} className="text-gray-700 hover:text-purple-600 transition-colors duration-300 text-sm xl:text-base">
+                        <a key={link.href} href={link.href} className="text-sm xl:text-[15px] font-medium text-gray-700 hover:text-purple-700 transition-colors duration-300">
                             {link.text}
                         </a>
                     ))}
-                    <a href="#contact" className="bg-purple-600 text-white px-4 py-2 xl:px-6 rounded-full hover:bg-purple-700 transition-all duration-300 transform hover:scale-105 text-sm xl:text-base">
-                        Konsultasi
+                    <a href="#contact" className="rounded-full bg-gradient-to-r from-purple-500 to-violet-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-purple-300/50 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl">
+                        Konsultasi Gratis
                     </a>
                 </div>
 
-                {/* Mobile Menu Button */}
-                <button className="lg:hidden text-gray-700" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                    {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                <button
+                    className="lg:hidden inline-flex items-center justify-center rounded-xl border border-purple-200 bg-white p-2 text-purple-700"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label="Toggle menu"
+                    aria-expanded={isMenuOpen}
+                >
+                    {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
                 </button>
             </div>
 
-            {/* Mobile Menu */}
-            <div className={`lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-lg shadow-lg transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96' : 'max-h-0'}`}>
-                <div className="flex flex-col p-6 space-y-4">
+            <div className={`lg:hidden mx-auto mt-2 max-w-7xl rounded-2xl border border-purple-200/70 bg-white/95 shadow-lg shadow-purple-100/70 backdrop-blur-xl transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-[480px] p-4' : 'max-h-0 p-0 border-transparent'}`}>
+                <div className="flex flex-col gap-2">
                     {navLinks.map((link) => (
-                        <a key={link.href} href={link.href} className="text-gray-700 hover:text-purple-600 text-lg" onClick={() => setIsMenuOpen(false)}>
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            className="rounded-xl px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition-colors"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
                             {link.text}
                         </a>
                     ))}
-                    <a href="#contact" className="bg-purple-600 text-white px-6 py-2 rounded-full text-center text-lg">
-                        Konsultasi
+                    <a href="#contact" className="mt-1 rounded-xl bg-gradient-to-r from-purple-500 to-violet-600 px-4 py-3 text-center text-white font-semibold" onClick={() => setIsMenuOpen(false)}>
+                        Konsultasi Gratis
                     </a>
                 </div>
             </div>
