@@ -71,23 +71,25 @@ const Navbar = () => {
                 </button>
             </div>
 
-            <div className={`lg:hidden mx-auto mt-2 max-w-7xl rounded-2xl border border-purple-200/70 bg-white/95 shadow-lg shadow-purple-100/70 backdrop-blur-xl transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-[480px] p-4' : 'max-h-0 p-0 border-transparent'}`}>
-                <div className="flex flex-col gap-2">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className="rounded-xl px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition-colors"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {link.text}
+            {isMenuOpen && (
+                <div className="lg:hidden mx-auto mt-2 max-w-7xl rounded-2xl border border-purple-200/70 bg-white/95 p-4 shadow-lg shadow-purple-100/70 backdrop-blur-xl">
+                    <div className="flex flex-col gap-2">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                className="rounded-xl px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {link.text}
+                            </a>
+                        ))}
+                        <a href="#contact" className="mt-1 rounded-xl bg-gradient-to-r from-purple-500 to-violet-600 px-4 py-3 text-center text-white font-semibold" onClick={() => setIsMenuOpen(false)}>
+                            Konsultasi Gratis
                         </a>
-                    ))}
-                    <a href="#contact" className="mt-1 rounded-xl bg-gradient-to-r from-purple-500 to-violet-600 px-4 py-3 text-center text-white font-semibold" onClick={() => setIsMenuOpen(false)}>
-                        Konsultasi Gratis
-                    </a>
+                    </div>
                 </div>
-            </div>
+            )}
         </nav>
     );
 };
